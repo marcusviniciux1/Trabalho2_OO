@@ -23,7 +23,6 @@ public class Compra extends Transacao {
 
     public boolean comprar(Produto produto, int qtdeCompra) {
         if (produto.verificarEstoqueExcedente(qtdeCompra) == true) {
-            System.out.println("Estoque excedido.");
             return false;
         }
             else {

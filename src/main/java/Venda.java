@@ -15,15 +15,12 @@ public class Venda extends Transacao {
 
     public boolean vender(Produto produto, int qtdeVendida) {
         if (produto.verificarEstoqueInsuficiente(qtdeVendida) == true) {
-            System.out.println("Estoque excedido.");
             return false;
         }
             else {
                 produto.debitarEstoque(qtdeVendida);
                 System.out.println(produto.calcularValorVenda(qtdeVendida));
-                if (produto.verificarEstoqueBaixo() == true) {
-                    System.out.println("Estoque baixo.");
-                }
+                produto.verificarEstoqueBaixo();
                 return true;
             }
     }
