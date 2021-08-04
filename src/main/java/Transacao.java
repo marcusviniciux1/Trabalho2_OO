@@ -8,21 +8,24 @@ public class Transacao {
 
         if (dataTransacao == null) {
             throw new IllegalArgumentException("Data da transação não informado.");
-        } else {
-            this.dataTransacao = dataTransacao;
         }
+            else {
+                this.dataTransacao = dataTransacao;
+            }
 
         if (produto == null) {
             throw new IllegalArgumentException("Produto não informado.");
-        } else {
-            this.produto = produto;
         }
+            else {
+                this.produto = produto;
+            }
 
         if (qtde <= 0) {
             throw new IllegalArgumentException("Quantidade menor ou igual a zero.");
-        } else {
-            this.qtde = qtde;
         }
+            else {
+                this.qtde = qtde;
+            }
     }
 
     public String getDataTransacao() {

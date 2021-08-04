@@ -13,5 +13,4 @@ class PessoaTest {
             assertEquals("Nome não informado.", e.getMessage());
         }
     }
-
 }

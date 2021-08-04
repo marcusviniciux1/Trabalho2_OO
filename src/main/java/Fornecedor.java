@@ -7,8 +7,9 @@ public class Fornecedor extends Pessoa {
 
         if (cnpj == null) {
             throw new IllegalArgumentException("CNPJ não informado.");
-        } else {
-            this.cnpj = cnpj;
         }
+            else {
+                this.cnpj = cnpj;
+            }
     }
 }

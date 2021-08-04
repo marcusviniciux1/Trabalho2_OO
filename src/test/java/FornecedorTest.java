@@ -7,11 +7,10 @@ class FornecedorTest {
     @Test
     void verificaCnpjNulo() {
         try {
-            Fornecedor fornecedor = new Fornecedor("Nicolas", null);
+            Fornecedor fornecedor = new Fornecedor("Nícolas", null);
             fail();
         } catch (IllegalArgumentException e) {
             assertEquals("CNPJ não informado.", e.getMessage());
         }
     }
-
 }

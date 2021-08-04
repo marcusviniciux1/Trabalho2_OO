@@ -201,7 +201,7 @@ class ProdutoTest {
     }
 
     @Test
-    public void verificaRetornarHistoricoCompra() {
+    public void verificaExibirHistoricoCompra() {
         Produto produto = new Produto("Notebook", 10, 3000.00f, 20, 2000);
         Fornecedor fornecedor = new Fornecedor("Dell", "0987654321");
         produto.comprar("03/03/21", fornecedor, 1, 2500.00f);
@@ -213,7 +213,7 @@ class ProdutoTest {
     }
 
     @Test
-    public void verificaRetornarHistoricoVenda() {
+    public void verificaExibirHistoricoVenda() {
         Produto produto = new Produto("Notebook", 10, 3500.00f, 20, 2000);
         Cliente cliente = new Cliente("Marcus", "0987654321");
         produto.vender("03/03/21", cliente, 1);
@@ -221,5 +221,15 @@ class ProdutoTest {
         List<String> lista = Arrays.asList("03/03/21, 1, Notebook");
 
         assertEquals(lista, produto.exibirHistorico());
+    }
+
+    @Test
+    void verificaRegistrarHistoricoNulo() {
+        Produto produto = new Produto("Notebook", 10, 3500.00f, 20, 2000);
+        try {
+            produto.registrarHistorico(null);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Transacao não informada.", e.getMessage());
+        }
     }
 }

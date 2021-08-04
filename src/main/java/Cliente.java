@@ -7,8 +7,9 @@ public class Cliente extends Pessoa {
 
         if (cpf == null) {
             throw new IllegalArgumentException("CPF não informado.");
-        } else {
-            this.cpf = cpf;
         }
+            else {
+                this.cpf = cpf;
+            }
     }
 }
